@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 client=OpenAI(api_key=st.secrets["api_key"])
 def get_ans(input_text):
-    OpenAI.api_key = "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"
+    OpenAI.api_key = st.secrets["api_key"]
     chatOutput = (client.chat.completions.create(model="gpt-3.5-turbo-16k",
                                               messages=[{"role": "system",
                                                          "content": "You are a very intelligent farmer who can understand various languages like English , Tamil. You are here to help with any sort of agricultural doubts asked to you. The user can ask questions in either english or tamil. You can reply in English itself. If they greet you tell them I am vevasa, your personal agricultural assistant"},
