@@ -1,7 +1,6 @@
 import streamlit as st
 from openai import OpenAI
-api_key='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'
-client=OpenAI(api_key=api_key)
+client=OpenAI(api_key=st.secrets["api_key"])
 def get_ans(input_text):
     OpenAI.api_key = "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"
     chatOutput = (client.chat.completions.create(model="gpt-3.5-turbo-16k",
